@@ -1,8 +1,9 @@
-<div class="header">
+<div class="container">
+  <div class="header">
     <img src="assets/past_header.png" alt="Bakery Banner" class="banner">
     <h1 class="title">Bakery Profits Manager</h1>
   </div>
-  
+
   <div class="content">
     <div class="product-grid">
       @for (item of items; track item) {
@@ -12,11 +13,8 @@
           <label>{{item.name}}</label>
           <label>{{item.price}}€</label>
         </div>
-        <div class="edit-icon">
-          <i class="fas fa-pencil-alt"></i>
-        </div>
       </div>
-    }
+      }
     </div>
   </div>
-  
+</div>

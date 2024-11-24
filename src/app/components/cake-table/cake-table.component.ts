@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-cake-table',
   imports: [],
+  standalone: true,
   templateUrl: './cake-table.component.html',
   styleUrl: './cake-table.component.scss'
 })
