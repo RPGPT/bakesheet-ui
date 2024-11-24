@@ -1,8 +1,12 @@
+:host {
+  height: 100vh;
+  width: 100vh;
+}
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
 }
 .banner {
     width: 100%;
@@ -11,22 +15,10 @@
   }
   
   .title {
-    margin-top: -65px;
+    position: absolute;
     color: white;
     font-size: 3rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  }
-  
-  .create-button {
-    display: block;
-    margin: 20px auto;
-    padding: 15px 30px;
-    background: linear-gradient(to right, #6a95ff, #a3d4ff);
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    color: white;
-    cursor: pointer;
   }
   
   .product-grid {
@@ -36,7 +28,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .product-card, .add-card {
+  .product-card {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
