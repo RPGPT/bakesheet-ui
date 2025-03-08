@@ -1,0 +1,29 @@
+<!-- ============================================================== -->
+<!-- Simple four boxes Row -->
+<!-- ============================================================== -->
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <mat-card-title class="m-b-30">Produtos
+      <a mat-flat-button color="primary" class="create-button" (click)="openModal()">
+        Create
+      </a>
+    </mat-card-title>
+    <app-blog></app-blog>
+  </mat-card-content>
+</mat-card>
+
+@if (showModal) {
+<app-create-product-modal (productCreated)="addProduct($event)" (modalClosed)="closeModal()"></app-create-product-modal>
+}
+<!-- Display the fetched image -->
+@if (imageUrl) {
+<div>
+  <h3>Search Result:</h3>
+  <img [src]="imageUrl" alt="Search result image" />
+</div>
+}
+@if (errorMessage) {
+<div>
+  <p style="color: red;">{{ errorMessage }}</p>
+</div>
+}

@@ -1,0 +1,25 @@
+<div class="row">
+    @for(productcard of productcards; track productcard.title) {
+    <div class="col-sm-6 col-lg-3">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+            <a routerLink="/widgets/cards">
+                <img src="{{ productcard.imgSrc }}" alt="imgSrc" class="w-100" mat-card-image />
+            </a>
+            <mat-card-content class="p-b-24 p-t-12 position-relative">
+                <button mat-mini-fab color="primary" class="icon-35 cart-btn" matTooltip="Edit product">
+                    <i-tabler name="edit" class="icon-22"></i-tabler>
+                </button>
+                <mat-card-title class="mat-headline-2 f-s-16 m-b-4">{{
+                    productcard.title
+                    }}</mat-card-title>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="mat-body-2 f-w-600">{{ productcard.price }}€</h3>
+                    <h4 class="mat-body-2 f-w-600" [ngStyle]="{'color': productcard.price ? 'green' : 'red'}">
+                        {{ productcard.price ? '+ ' + productcard.price + '€' : '- ' + productcard.price + '€' }}
+                    </h4>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    }   
+</div>
