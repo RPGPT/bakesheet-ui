@@ -1,10 +1,9 @@
 import {
   Component,
-  EventEmitter,
   Input,
   OnInit,
-  Output,
   ViewChild,
+  output
 } from '@angular/core';
 import { BrandingComponent } from './branding.component';
 
@@ -19,8 +18,8 @@ import { MaterialModule } from 'src/app/material.module';
 export class SidebarComponent implements OnInit {
   constructor() {}
   @Input() showToggle = true;
-  @Output() toggleMobileNav = new EventEmitter<void>();
-  @Output() toggleCollapsed = new EventEmitter<void>();
+  readonly toggleMobileNav = output<void>();
+  readonly toggleCollapsed = output<void>();
 
   ngOnInit(): void {}
 }

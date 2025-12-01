@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
+import { Component, OnInit, inject, output } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -31,8 +31,8 @@ import { Product } from 'src/app/models/product';
 export class CreateProductModalComponent implements OnInit {
   private fb = inject(NonNullableFormBuilder);
 
-  @Output() productCreated = new EventEmitter<any>();
-  @Output() modalClosed = new EventEmitter<void>();
+  readonly productCreated = output<any>();
+  readonly modalClosed = output<void>();
 
   productForm: FormGroup;
   ingredients: Ingredient[] = [];
@@ -91,6 +91,7 @@ export class CreateProductModalComponent implements OnInit {
   }
 
   closeModal(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.modalClosed.emit();
   }
 
