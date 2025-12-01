@@ -32,7 +32,7 @@ export class AppNavItemComponent implements OnChanges {
   router = inject(Router);
 
   readonly toggleMobileLink = output<void>();
-  readonly notify = output<boolean>();
+  readonly notify = output();
 
   expanded: any = false;
   disabled: any = false;
@@ -74,7 +74,6 @@ export class AppNavItemComponent implements OnChanges {
     });
     if (!this.expanded){
     if (window.innerWidth < 1024) {
-      // TODO: The 'emit' function requires a mandatory boolean argument
       this.notify.emit();
     }
   }
@@ -83,7 +82,6 @@ export class AppNavItemComponent implements OnChanges {
   onSubItemSelected(item: NavItem) {
     if (!item.children || !item.children.length){
       if (this.expanded && window.innerWidth < 1024) {
-        // TODO: The 'emit' function requires a mandatory boolean argument
         this.notify.emit();
       }
     }
