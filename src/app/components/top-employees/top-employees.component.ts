@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MaterialModule } from 'src/app/material.module';
@@ -60,7 +60,7 @@ const ELEMENT_DATA: productsData[] = [
 
 @Component({
     selector: 'app-top-employees',
-    imports: [CommonModule, MatMenuModule, MatButtonModule, MaterialModule],
+    imports: [MatMenuModule, MatButtonModule, MaterialModule, TitleCasePipe],
     templateUrl: './top-employees.component.html'
 })
 export class AppTopEmployeesComponent {

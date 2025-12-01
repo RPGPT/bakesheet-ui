@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
@@ -50,14 +50,14 @@ const PRODUCT_DATA: productsData[] = [
 @Component({
     selector: 'app-tables',
     imports: [
-        MatTableModule,
-        CommonModule,
-        MatCardModule,
-        MaterialModule,
-        MatIconModule,
-        MatMenuModule,
-        MatButtonModule,
-    ],
+    MatTableModule,
+    MatCardModule,
+    MaterialModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    TitleCasePipe
+],
     templateUrl: './tables.component.html'
 })
 export class AppTablesComponent {
