@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { StarterComponent } from './starter/starter.component';
+
 
 export const PagesRoutes: Routes = [
   {
     path: '',
-    component: StarterComponent,
+    loadComponent: () => import('./starter/starter.component').then(m => m.StarterComponent),
     data: {
       title: 'Starter',
       urls: [

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -10,13 +10,13 @@ import { Router, RouterModule } from '@angular/router';
 import { MaterialModule } from '../../../material.module';
 
 @Component({
-  selector: 'app-side-register',
-  standalone: true,
-  imports: [RouterModule, MaterialModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './side-register.component.html',
+    selector: 'app-side-register',
+    imports: [RouterModule, MaterialModule, FormsModule, ReactiveFormsModule],
+    templateUrl: './side-register.component.html'
 })
 export class AppSideRegisterComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+
 
   form = new FormGroup({
     uname: new FormControl('', [Validators.required, Validators.minLength(6)]),

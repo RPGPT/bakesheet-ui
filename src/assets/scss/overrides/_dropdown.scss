@@ -1,3 +1,5 @@
+@use "../config" as *;
+
 body {
   .mdc-menu-surface {
     box-shadow: $box-shadow !important;

@@ -1,3 +1,5 @@
+@use "../config" as *;
+
 .blank-layout-container {
   min-height: 100vh;
   display: flex;

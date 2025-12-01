@@ -8,10 +8,9 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import { Product } from 'src/app/models/product';
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [MatCardModule, MatChipsModule, TablerIconsModule, MatButtonModule, MatIconModule, NgStyle],
-  templateUrl: './apps-blog.component.html',
+    selector: 'app-blog',
+    imports: [MatCardModule, MatChipsModule, TablerIconsModule, MatButtonModule, MatIconModule, NgStyle],
+    templateUrl: './apps-blog.component.html'
 })
 export class AppBlogComponent {
   constructor() { }

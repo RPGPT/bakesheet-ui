@@ -1,23 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../../material.module';
 import { AppBlogComponent } from "../../../components/apps-blog/apps-blog.component";
 import { ImageService } from 'src/app/services/image.service';
 import { CreateProductModalComponent } from "../../../components/create-product-modal/create-product-modal.component";
 
 @Component({
-  selector: 'app-sample-page',
-  standalone: true,
-  imports: [MaterialModule, AppBlogComponent, CreateProductModalComponent],
-  styleUrls: ['./sample-page.component.scss'],
-  templateUrl: './sample-page.component.html',
+    selector: 'app-sample-page',
+    imports: [MaterialModule, AppBlogComponent, CreateProductModalComponent],
+    styleUrls: ['./sample-page.component.scss'],
+    templateUrl: './sample-page.component.html'
 })
 
 export class AppSamplePageComponent {
+  imageService = inject(ImageService);
+
   imageUrl: string;
   errorMessage: string;
   showModal: boolean = false;
-
-  constructor(public imageService: ImageService) { }
 
   openModal(): void {
     this.showModal = true;

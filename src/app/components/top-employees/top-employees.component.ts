@@ -59,10 +59,9 @@ const ELEMENT_DATA: productsData[] = [
 ];
 
 @Component({
-  selector: 'app-top-employees',
-  standalone: true,
-  imports: [CommonModule, MatMenuModule, MatButtonModule, MaterialModule],
-  templateUrl: './top-employees.component.html',
+    selector: 'app-top-employees',
+    imports: [CommonModule, MatMenuModule, MatButtonModule, MaterialModule],
+    templateUrl: './top-employees.component.html'
 })
 export class AppTopEmployeesComponent {
   displayedColumns: string[] = ['profile', 'hrate', 'skills', 'status'];

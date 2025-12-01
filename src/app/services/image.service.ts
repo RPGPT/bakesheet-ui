@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class ImageService {
+    private http = inject(HttpClient);
+
     private apiUrl = 'https://api.duckduckgo.com';
     private baseImageUrl = 'https://duckduckgo.com';
-
-    constructor(private http: HttpClient) { }
 
     searchImage(query: string): Observable<string | null> {
         const url = `${this.apiUrl}/?q=${encodeURIComponent(query)}&format=json&pretty=1`;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -11,19 +11,19 @@ import { MaterialModule } from '../../../material.module';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-side-login',
-  standalone: true,
-  imports: [
-    RouterModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-  ],
-  templateUrl: './side-login.component.html',
+    selector: 'app-side-login',
+    imports: [
+        RouterModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+    ],
+    templateUrl: './side-login.component.html'
 })
 export class AppSideLoginComponent {
-  constructor(private router: Router) { }
+  private router = inject(Router);
+
 
   form = new FormGroup({
     uname: new FormControl('', [Validators.required, Validators.minLength(6)]),

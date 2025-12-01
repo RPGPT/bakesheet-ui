@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { AppSideLoginComponent } from './side-login/side-login.component';
-import { AppSideRegisterComponent } from './side-register/side-register.component';
+
+
 
 export const AuthenticationRoutes: Routes = [
   {
@@ -9,11 +9,11 @@ export const AuthenticationRoutes: Routes = [
     children: [
       {
         path: 'login',
-        component: AppSideLoginComponent,
+        loadComponent: () => import('./side-login/side-login.component').then(m => m.AppSideLoginComponent),
       },
       {
         path: 'register',
-        component: AppSideRegisterComponent,
+        loadComponent: () => import('./side-register/side-register.component').then(m => m.AppSideRegisterComponent),
       },
     ],
   },

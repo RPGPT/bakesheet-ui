@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { BlankComponent } from './layouts/blank/blank.component';
-import { FullComponent } from './layouts/full/full.component';
+
+
 
 export const routes: Routes = [
   {
     path: '',
-    component: FullComponent,
+    loadComponent: () => import('./layouts/full/full.component').then(m => m.FullComponent),
     children: [
       {
         path: '',
@@ -33,7 +33,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: BlankComponent,
+    loadComponent: () => import('./layouts/blank/blank.component').then(m => m.BlankComponent),
     children: [
       {
         path: 'authentication',

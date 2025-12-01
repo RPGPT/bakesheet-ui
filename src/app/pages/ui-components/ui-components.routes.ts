@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 
 // ui
-import { AppBadgeComponent } from './badge/badge.component';
-import { AppChipsComponent } from './chips/chips.component';
-import { AppListsComponent } from './lists/lists.component';
-import { AppMenuComponent } from './menu/menu.component';
-import { AppTooltipsComponent } from './tooltips/tooltips.component';
-import { AppFormsComponent } from './forms/forms.component';
-import { AppTablesComponent } from './tables/tables.component';
+
+
+
+
+
+
+
 
 export const UiComponentsRoutes: Routes = [
   {
@@ -15,31 +15,31 @@ export const UiComponentsRoutes: Routes = [
     children: [
       {
         path: 'badge',
-        component: AppBadgeComponent,
+        loadComponent: () => import('./badge/badge.component').then(m => m.AppBadgeComponent),
       },
       {
         path: 'chips',
-        component: AppChipsComponent,
+        loadComponent: () => import('./chips/chips.component').then(m => m.AppChipsComponent),
       },
       {
         path: 'lists',
-        component: AppListsComponent,
+        loadComponent: () => import('./lists/lists.component').then(m => m.AppListsComponent),
       },
       {
         path: 'menu',
-        component: AppMenuComponent,
+        loadComponent: () => import('./menu/menu.component').then(m => m.AppMenuComponent),
       },
       {
         path: 'tooltips',
-        component: AppTooltipsComponent,
+        loadComponent: () => import('./tooltips/tooltips.component').then(m => m.AppTooltipsComponent),
       },
       {
         path: 'forms',
-        component: AppFormsComponent,
+        loadComponent: () => import('./forms/forms.component').then(m => m.AppFormsComponent),
       },
       {
         path: 'tables',
-        component: AppTablesComponent,
+        loadComponent: () => import('./tables/tables.component').then(m => m.AppTablesComponent),
       },
     ],
   },

@@ -37,10 +37,9 @@ export interface trafficdistributionChart {
 }
 
 @Component({
-  selector: 'app-traffic-distribution',
-  standalone: true,
-  imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
-  templateUrl: './traffic-distribution.component.html',
+    selector: 'app-traffic-distribution',
+    imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
+    templateUrl: './traffic-distribution.component.html'
 })
 export class AppTrafficDistributionComponent {
 

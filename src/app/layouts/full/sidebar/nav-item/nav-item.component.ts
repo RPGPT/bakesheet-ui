@@ -1,12 +1,4 @@
-import {
-  Component,
-  HostBinding,
-  Input,
-  OnInit,
-  OnChanges,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, HostBinding, Input, OnInit, OnChanges, Output, EventEmitter, inject } from '@angular/core';
 import { NavItem } from './nav-item';
 import { Router } from '@angular/router';
 import { NavService } from '../../../../services/nav.service';
@@ -23,23 +15,22 @@ import { MaterialModule } from 'src/app/material.module';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-nav-item',
-  standalone: true,
-  imports: [TranslateModule, TablerIconsModule, MaterialModule, CommonModule],
-  templateUrl: './nav-item.component.html',
-  styleUrls: [],
-  animations: [
-    trigger('indicatorRotate', [
-      state('collapsed', style({ transform: 'rotate(0deg)' })),
-      state('expanded', style({ transform: 'rotate(180deg)' })),
-      transition(
-        'expanded <=> collapsed',
-        animate('225ms cubic-bezier(0.4,0.0,0.2,1)')
-      ),
-    ]),
-  ],
+    selector: 'app-nav-item',
+    imports: [TranslateModule, TablerIconsModule, MaterialModule, CommonModule],
+    templateUrl: './nav-item.component.html',
+    styleUrls: [],
+    animations: [
+        trigger('indicatorRotate', [
+            state('collapsed', style({ transform: 'rotate(0deg)' })),
+            state('expanded', style({ transform: 'rotate(180deg)' })),
+            transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4,0.0,0.2,1)')),
+        ]),
+    ]
 })
 export class AppNavItemComponent implements OnChanges {
+  navService = inject(NavService);
+  router = inject(Router);
+
   @Output() toggleMobileLink: any = new EventEmitter<void>();
   @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -50,7 +41,7 @@ export class AppNavItemComponent implements OnChanges {
   @Input() item: NavItem | any;
   @Input() depth: any;
 
-  constructor(public navService: NavService, public router: Router) {
+  constructor() {
     if (this.depth === undefined) {
       this.depth = 0;
     }

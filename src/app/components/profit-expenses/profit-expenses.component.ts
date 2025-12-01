@@ -43,10 +43,9 @@ export interface profitExpanceChart {
 }
 
 @Component({
-  selector: 'app-profit-expenses',
-  standalone: true,
-  imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
-  templateUrl: './profit-expenses.component.html',
+    selector: 'app-profit-expenses',
+    imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
+    templateUrl: './profit-expenses.component.html'
 })
 export class AppProfitExpensesComponent {
 

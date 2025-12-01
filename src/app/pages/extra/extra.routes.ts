@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 
 
 // pages
-import { AppIconsComponent } from './icons/icons.component';
-import { AppSamplePageComponent } from './sample-page/sample-page.component';
+
+
 
 export const ExtraRoutes: Routes = [
   {
@@ -11,11 +11,11 @@ export const ExtraRoutes: Routes = [
     children: [
       {
         path: 'icons',
-        component: AppIconsComponent,
+        loadComponent: () => import('./icons/icons.component').then(m => m.AppIconsComponent),
       },
       {
         path: 'sample-page',
-        component: AppSamplePageComponent,
+        loadComponent: () => import('./sample-page/sample-page.component').then(m => m.AppSamplePageComponent),
       },
     ],
   },

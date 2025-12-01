@@ -1,5 +1,5 @@
 import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { NavService } from '../../services/nav.service';
 import { AppNavItemComponent } from './sidebar/nav-item/nav-item.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
-import { CommonModule } from '@angular/common';
+
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { TablerIconsModule } from 'angular-tabler-icons';
@@ -21,24 +21,25 @@ const BELOWMONITOR = 'screen and (max-width: 1023px)';
 
 
 @Component({
-  selector: 'app-full',
-  standalone: true,
-  imports: [
+    selector: 'app-full',
+    imports: [
     RouterModule,
     AppNavItemComponent,
     MaterialModule,
-    CommonModule,
     SidebarComponent,
     NgScrollbarModule,
     TablerIconsModule,
-    HeaderComponent,
-  ],
-  templateUrl: './full.component.html',
-  styleUrls: [],
-  encapsulation: ViewEncapsulation.None,
+    HeaderComponent
+],
+    templateUrl: './full.component.html',
+    styleUrls: [],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class FullComponent implements OnInit {
+  private breakpointObserver = inject(BreakpointObserver);
+  private navService = inject(NavService);
+
 
   navItems = navItems;
 
@@ -56,7 +57,7 @@ export class FullComponent implements OnInit {
     return this.isMobileScreen;
   }
 
-  constructor(private breakpointObserver: BreakpointObserver, private navService: NavService) {
+  constructor() {
 
     this.htmlElement = document.querySelector('html')!;
     this.htmlElement.classList.add('light-theme');

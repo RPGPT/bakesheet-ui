@@ -1,3 +1,5 @@
+@use "../config" as *;
+
 .mat-drawer.sidebarNav {
   width: $sidenav-desktop;
   flex-shrink: 0;

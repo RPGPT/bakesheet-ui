@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -17,19 +17,20 @@ import { RecipeIngredient } from 'src/app/models/recipeIngredient';
 import { Product } from 'src/app/models/product';
 
 @Component({
-  selector: 'app-create-product-modal',
-  standalone: true,
-  imports: [
-    RouterModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-  ],
-  templateUrl: './create-product-modal.component.html',
-  styleUrl: './create-product-modal.component.scss'
+    selector: 'app-create-product-modal',
+    imports: [
+        RouterModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+    ],
+    templateUrl: './create-product-modal.component.html',
+    styleUrl: './create-product-modal.component.scss'
 })
 export class CreateProductModalComponent implements OnInit {
+  private fb = inject(NonNullableFormBuilder);
+
   @Output() productCreated = new EventEmitter<any>();
   @Output() modalClosed = new EventEmitter<void>();
 
@@ -38,7 +39,7 @@ export class CreateProductModalComponent implements OnInit {
   selectedIngredient!: Ingredient;
   quantity: number = 1;
 
-  constructor(private fb: NonNullableFormBuilder) {
+  constructor() {
     this.productForm = this.fb.group({
       title: ['', Validators.required],
       imgSrc: [''],

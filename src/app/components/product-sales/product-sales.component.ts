@@ -37,10 +37,9 @@ export interface productsalesChart {
 }
 
 @Component({
-  selector: 'app-product-sales',
-  standalone: true,
-  imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
-  templateUrl: './product-sales.component.html',
+    selector: 'app-product-sales',
+    imports: [MaterialModule, TablerIconsModule, MatButtonModule, NgApexchartsModule],
+    templateUrl: './product-sales.component.html'
 })
 export class AppProductSalesComponent {
 
