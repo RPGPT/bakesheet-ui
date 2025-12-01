@@ -1,6 +1,6 @@
 import {
   ApplicationConfig,
-  provideZoneChangeDetection,
+  provideExperimentalZonelessChangeDetection,
   importProvidersFrom,
 } from '@angular/core';
 import {
@@ -36,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient): any {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(
       routes,
       withInMemoryScrolling({
