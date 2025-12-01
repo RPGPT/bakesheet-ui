@@ -14,7 +14,7 @@
                     }}</mat-card-title>
                 <div class="d-flex align-items-center justify-content-between">
                     <h3 class="mat-body-2 f-w-600">{{ productcard.price }}€</h3>
-                    <h4 class="mat-body-2 f-w-600" [ngStyle]="{'color': productcard.price ? 'green' : 'red'}">
+                    <h4 class="mat-body-2 f-w-600" [style.color]="productcard.price ? 'green' : 'red'">
                         {{ productcard.price ? '+ ' + productcard.price + '€' : '- ' + productcard.price + '€' }}
                     </h4>
                 </div>

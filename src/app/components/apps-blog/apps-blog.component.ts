@@ -1,4 +1,4 @@
-import { NgStyle } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,7 +9,7 @@ import { Product } from 'src/app/models/product';
 
 @Component({
     selector: 'app-blog',
-    imports: [MatCardModule, MatChipsModule, TablerIconsModule, MatButtonModule, MatIconModule, NgStyle],
+    imports: [MatCardModule, MatChipsModule, TablerIconsModule, MatButtonModule, MatIconModule],
     templateUrl: './apps-blog.component.html'
 })
 export class AppBlogComponent {
