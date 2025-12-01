@@ -1,8 +1,8 @@
 import {
   Component,
-  Input,
   ViewEncapsulation,
-  output
+  output,
+  input
 } from '@angular/core';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
@@ -17,8 +17,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent {
-  @Input() showToggle = true;
-  @Input() toggleChecked = false;
+  readonly showToggle = input(true);
+  readonly toggleChecked = input(false);
   readonly toggleMobileNav = output<void>();
   readonly toggleMobileFilterNav = output<void>();
   readonly toggleCollapsed = output<void>();

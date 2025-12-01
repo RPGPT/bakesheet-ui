@@ -1,9 +1,9 @@
 import {
   Component,
-  Input,
   OnInit,
   ViewChild,
-  output
+  output,
+  input
 } from '@angular/core';
 import { BrandingComponent } from './branding.component';
 
@@ -17,7 +17,7 @@ import { MaterialModule } from 'src/app/material.module';
 })
 export class SidebarComponent implements OnInit {
   constructor() {}
-  @Input() showToggle = true;
+  readonly showToggle = input(true);
   readonly toggleMobileNav = output<void>();
   readonly toggleCollapsed = output<void>();
 
