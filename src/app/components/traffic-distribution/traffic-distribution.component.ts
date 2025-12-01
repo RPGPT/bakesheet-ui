@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 import { MatButtonModule } from '@angular/material/button';
@@ -43,7 +43,7 @@ export interface trafficdistributionChart {
 })
 export class AppTrafficDistributionComponent {
 
-  @ViewChild('chart') chart: ChartComponent = Object.create(null);
+  readonly chart = viewChild<ChartComponent>('chart');
 
   public trafficdistributionChart!: Partial<trafficdistributionChart> | any;
 
