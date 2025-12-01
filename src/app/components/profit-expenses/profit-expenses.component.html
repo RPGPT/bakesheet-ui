@@ -4,7 +4,7 @@
             <mat-card-title>Profit & Expenses</mat-card-title>
             <div class="m-l-auto">
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <i-tabler name="dots-vertical"></i-tabler>
+                    <i-tabler name="dots-vertical" />
                 </button>
                 <mat-menu #menu="matMenu" xPosition="before">
                     <button mat-menu-item>
@@ -22,6 +22,6 @@
         <apx-chart [series]="profitExpanceChart.series" [dataLabels]="profitExpanceChart.dataLabels"
             [chart]="profitExpanceChart.chart" [legend]="profitExpanceChart.legend" [xaxis]="profitExpanceChart.xaxis"
             [yaxis]="profitExpanceChart.yaxis" [grid]="profitExpanceChart.grid" [stroke]="profitExpanceChart.stroke"
-            [tooltip]="profitExpanceChart.tooltip" [plotOptions]="profitExpanceChart.plotOptions"></apx-chart>
+            [tooltip]="profitExpanceChart.tooltip" [plotOptions]="profitExpanceChart.plotOptions" />
     </mat-card-content>
 </mat-card>

@@ -8,12 +8,12 @@
         Create
       </a>
     </mat-card-title>
-    <app-blog></app-blog>
+    <app-blog />
   </mat-card-content>
 </mat-card>
 
 @if (showModal) {
-<app-create-product-modal (productCreated)="addProduct($event)" (modalClosed)="closeModal()"></app-create-product-modal>
+<app-create-product-modal (productCreated)="addProduct($event)" (modalClosed)="closeModal()" />
 }
 <!-- Display the fetched image -->
 @if (imageUrl) {

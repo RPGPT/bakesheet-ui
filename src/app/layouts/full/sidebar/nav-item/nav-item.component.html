@@ -10,7 +10,7 @@
       expanded: expanded,
       disabled: item.disabled
     }" class="menu-list-item {{ item.bgcolor }}">
-  <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon></i-tabler>
+  <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon />
   <span class="hide-menu">{{ item.displayName | translate }}</span>
   @if(item.children && item.children.length) {
   <span class="arrow-icon" fxFlex>
@@ -30,7 +30,7 @@
 <!-- external Link -->
 @if(!item.navCap && item.external) {
 <mat-list-item onClick="window.open('//google.com')" class="menu-list-item {{ item.bgcolor }}" target="_blank">
-  <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon></i-tabler>
+  <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon />
   <span class="hide-menu">{{ item.displayName | translate }}</span>
 </mat-list-item>
 }
@@ -39,8 +39,7 @@
 @if(expanded) {
 <div>
   @for(child of item.children; track child) {
-  <app-nav-item [item]="child" (click)="onSubItemSelected(child)" [depth]="depth + 1">
-  </app-nav-item>
+  <app-nav-item [item]="child" (click)="onSubItemSelected(child)" [depth]="depth + 1" />
   }
 </div>
 }
